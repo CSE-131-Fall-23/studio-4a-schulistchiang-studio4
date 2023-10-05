@@ -25,12 +25,46 @@ public class InterpretDrawingFile {
 		int greenComponent = in.nextInt();
 		int blueComponent = in.nextInt();
 		boolean isFilled = in.nextBoolean();
-
+		StdDraw.setPenColor(redComponent, greenComponent, blueComponent);
+		
 		if (shapeType.equals("rectangle")) {
 			double x = in.nextDouble();
 			double y = in.nextDouble();
 			double halfWidth = in.nextDouble();
 			double halfHeight = in.nextDouble();
+			if (isFilled) {
+				StdDraw.filledRectangle(x, y, halfWidth, halfHeight);
+			} else {
+				StdDraw.rectangle(x, y, halfWidth, halfHeight);
+			}
 		}
+		else if (shapeType.equals("ellipse")) {
+			double x = in.nextDouble();
+			double y = in.nextDouble();
+			double rad1 = in.nextDouble();
+			double rad2 = in.nextDouble();
+			if (isFilled) {
+				StdDraw.filledEllipse(x, y, rad1, rad2);
+			} else {
+				StdDraw.ellipse(x, y, rad1, rad2);
+			}
+		}
+		else if (shapeType.equals("triangle")) {
+			double x1 = in.nextDouble();
+			double y1 = in.nextDouble();
+			double x2 = in.nextDouble();
+			double y2 = in.nextDouble();
+			double x3 = in.nextDouble();
+			double y3 = in.nextDouble();
+			double[] xCoords = {x1, x2, x3};
+			double[] yCoords = {y1, y2, y3};
+			if (isFilled) {
+				StdDraw.filledPolygon(xCoords, yCoords);
+			} else {
+				StdDraw.polygon(xCoords, yCoords);
+			}
+			
+		}
+		
 	}
 }
