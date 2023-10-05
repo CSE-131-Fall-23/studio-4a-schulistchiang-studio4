@@ -1,6 +1,11 @@
 package studio4;
 
-import java.awt.Color;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+import javax.swing.JFileChooser;
+import javax.swing.SwingUtilities;
 
 import edu.princeton.cs.introcs.StdDraw;
 
