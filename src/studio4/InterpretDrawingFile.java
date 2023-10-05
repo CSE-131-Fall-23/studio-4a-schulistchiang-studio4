@@ -21,11 +21,11 @@ public class InterpretDrawingFile {
 		Scanner in = new Scanner(f); // making Scanner with a File
 
 		// find total number of shapes
-		int nlines = 0;
-		while (in.hasNextLine()) {
-			nlines++;
-			in.nextLine();
-		}
+		int nlines = 4;
+//		while (in.hasNextLine()) {
+//			nlines++;
+//			in.nextLine();
+//		}
 		
 		String shapeType;
 		int redComponent;
